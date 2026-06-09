@@ -1,0 +1,356 @@
+/* ─────────────────────────────────────────
+   Studio by Cynthia Shop — styles.css
+   Aesthetics: Soft Luxury (Champagne, Warm Ivory, Dusty Blush, Terracotta)
+───────────────────────────────────────── */
+
+:root {
+  /* Logo Palette */
+  --bg-blush: #F8E7E7;
+  --brand-red: #BA1C1B;
+  --charcoal: #2A1C1B; /* Dark, warm grey for readable body text */
+  --white: #FFFFFF;
+  
+  /* Typography */
+  --ff-serif: 'Bodoni Moda', serif;
+  --ff-script: 'Pinyon Script', cursive;
+  --ff-sans: 'Jost', sans-serif;
+  
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 100px;
+  --shadow-soft: 0 10px 40px rgba(139, 74, 58, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-blush);
+  color: var(--charcoal);
+  font-family: var(--ff-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  color: var(--brand-red);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── TOP LOGO ── */
+.top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 2rem 5%;
+  text-align: left;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--ff-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--brand-red);
+}
+
+/* ── FLOATING SIDE NAV ── */
+.floating-side-nav {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: var(--white);
+  padding: 1rem 0.8rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(186, 28, 27, 0.1);
+  z-index: 100;
+}
+
+.side-link {
+  color: var(--charcoal);
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.side-link:hover {
+  color: var(--brand-red);
+  transform: scale(1.1);
+}
+
+.side-link::after {
+  content: attr(title);
+  position: absolute;
+  right: 100%;
+  margin-right: 15px;
+  background: var(--white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(10px);
+  box-shadow: 0 2px 10px rgba(186, 28, 27, 0.05);
+}
+
+.side-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-blush);
+  padding: 0 5%;
+}
+
+/* ── DOODLES ── */
+.doodle {
+  position: absolute;
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ✦ Stars */
+.doodle-star-1 {
+  width: 120px; height: auto;
+  top: 18%; left: 12%;
+  animation: floatStar 6s ease-in-out infinite;
+}
+
+.doodle-star-2 {
+  width: 100px; height: auto;
+  bottom: 28%; right: 18%;
+  animation: floatStar 5s ease-in-out infinite 1s;
+}
+
+.doodle-star-3 {
+  width: 80px; height: auto;
+  top: 30%; right: 28%;
+  opacity: 0.8;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+/* ✉ Envelope */
+.doodle-envelope {
+  width: 140px; height: auto;
+  top: 22%; right: 14%;
+  animation: floatEnvelope 7s ease-in-out infinite;
+}
+
+/* ♥ Hearts */
+.doodle-heart {
+  width: 110px; height: auto;
+  bottom: 22%; left: 20%;
+  animation: floatHeart 5s ease-in-out infinite alternate;
+}
+
+.doodle-heart-2 {
+  width: 90px; height: auto;
+  top: 35%; left: 8%;
+  opacity: 0.8;
+  animation: floatHeart 4s ease-in-out infinite 0.5s;
+}
+
+/* 🎀 Ribbon Bow */
+.doodle-ribbon {
+  width: 150px; height: auto;
+  bottom: 18%; right: 12%;
+  animation: floatRibbon 6s ease-in-out infinite;
+}
+
+@keyframes floatStar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(15deg); }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes floatEnvelope {
+  0%, 100% { transform: translateY(0) rotate(12deg); }
+  50% { transform: translateY(-12px) rotate(18deg); }
+}
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-10px) rotate(-5deg); }
+}
+
+@keyframes floatRibbon {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  letter-spacing: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--brand-red);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(186, 28, 27, 0.2);
+}
+
+.btn:hover {
+  background-color: #8A1514;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(186, 28, 27, 0.3);
+}
+
+/* ── FEATURED TEMPLATES ── */
+.shop-section {
+  padding: 8rem 5%;
+  background-color: var(--bg-blush);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--charcoal);
+  opacity: 0.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: #F0D9D9;
+  position: relative;
+}
+
+/* Placeholder for now until we have images */
+.product-image::after {
+  content: 'Template Preview';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-serif);
+  color: var(--brand-red);
+  opacity: 0.5;
+  font-size: 1.5rem;
+}
+
+.product-info {
+  padding: 2rem;
+  text-align: center;
+}
+
+.product-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-red);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--brand-red);
+  border: 1px solid var(--brand-red);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--brand-red);
+  color: #fff;
+}
