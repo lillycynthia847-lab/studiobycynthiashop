@@ -73,9 +73,9 @@
         <div class="product-info">
           <span class="product-category">Wedding</span>
           <h3 class="product-title">The Minimalist Suite</h3>
-          <div class="product-price">KES 1,500 Template / KES 7,500 Done-For-You</div>
+          <div class="product-price">From KES 1,500</div>
           <div class="product-actions">
-            <a href="#" class="btn btn-outline">View Details</a>
+            <button class="btn btn-outline preview-btn" data-title="The Minimalist Suite" data-category="Wedding" data-desc="A timeless, elegant design perfect for modern couples. Includes invitations, save the dates, and RSVP cards." data-embed="https://www.canva.com/design/DAF0jK9Lq84/view?embed">Live Preview</button>
           </div>
         </div>
       </article>
@@ -86,9 +86,9 @@
         <div class="product-info">
           <span class="product-category">Birthday</span>
           <h3 class="product-title">Champagne Celebration</h3>
-          <div class="product-price">KES 1,200 Template / KES 6,000 Done-For-You</div>
+          <div class="product-price">From KES 1,200</div>
           <div class="product-actions">
-            <a href="#" class="btn btn-outline">View Details</a>
+            <button class="btn btn-outline preview-btn" data-title="Champagne Celebration" data-category="Birthday" data-desc="A chic, bubbly aesthetic perfect for milestone birthdays. Easily customize colors to match your theme." data-embed="https://www.canva.com/design/DAF0jK9Lq84/view?embed">Live Preview</button>
           </div>
         </div>
       </article>
@@ -99,14 +99,51 @@
         <div class="product-info">
           <span class="product-category">Brand Kit</span>
           <h3 class="product-title">The Editorial Aesthetic</h3>
-          <div class="product-price">KES 2,500 Template / KES 12,000 Done-For-You</div>
+          <div class="product-price">From KES 2,500</div>
           <div class="product-actions">
-            <a href="#" class="btn btn-outline">View Details</a>
+            <button class="btn btn-outline preview-btn" data-title="The Editorial Aesthetic" data-category="Brand Kit" data-desc="A high-fashion, minimalist brand kit for creatives and boutiques. Includes logos, typography, and social media posts." data-embed="https://www.canva.com/design/DAF0jK9Lq84/view?embed">Live Preview</button>
           </div>
         </div>
       </article>
     </div>
   </section>
+
+  <!-- ── PRODUCT PREVIEW MODAL ── -->
+  <div id="preview-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-split">
+        <div class="modal-left">
+          <div class="iframe-container" id="canva-embed-container">
+            <!-- Iframe injected by JS -->
+          </div>
+        </div>
+        <div class="modal-right">
+          <span class="product-category" id="modal-category">Category</span>
+          <h2 id="modal-title">Product Title</h2>
+          <p id="modal-description">Product description goes here.</p>
+          
+          <div class="purchase-options">
+            <div class="option-card">
+              <h4>DIY Template</h4>
+              <div class="price">KES 1,500</div>
+              <p>Instant access to the Canva link. Edit text, colors, and photos yourself.</p>
+              <button class="btn btn-full">Buy Template</button>
+            </div>
+            
+            <div class="option-card highlight-card">
+              <h4>Done-For-You</h4>
+              <div class="price">KES 7,500</div>
+              <p>We do all the editing for you and send you the print-ready files within 48 hours.</p>
+              <button class="btn btn-full">Buy Full Service</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/shop.js"></script>
 
 </body>
 </html>
